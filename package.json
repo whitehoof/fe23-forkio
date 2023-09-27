@@ -1,7 +1,7 @@
 {
-  "name": "fe23-hw02",
+  "name": "fe23-forkio",
   "version": "1.0.0",
-  "description": "FE23 Homework 02 Gulp, SCSS",
+  "description": "FE23 Step Project Forkio",
   "main": "scripts/script.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -11,9 +11,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/whitehoof/fe23-hw02.git"
+    "url": "git+https://github.com/whitehoof/fe23-forkio.git"
   },
-  "author": "Ed Whitehoof",
+  "author": "Ед Білокопитов, Геннадій Ковтун",
   "license": "ISC",
   "devDependencies": {
     "browser-sync": "^2.29.3",
