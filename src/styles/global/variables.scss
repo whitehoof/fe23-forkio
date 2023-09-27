@@ -1,0 +1,53 @@
+// --------------------- COLORS
+
+$ui-color-corporate:		#8D81AC;
+$ui-color-burger:			#ffffff;
+$ui-color-text-ondark:		#ffffff;
+$ui-color-hover-ondark:		#ffffff;
+
+$ui-bg-dark:				#27262A;
+$ui-bg-menu:				#3b3b3b;
+$ui-bg-menu-item:			#333333;
+$ui-bg-light:				#ffffff;
+
+
+
+
+// --------------------- BREAKPOINTS AND SIZES
+
+$ui-min-width:			320px;
+
+$ui-breakpoint-s:		480px;	// max mobile
+$ui-breakpoint-s-min:	481px;	// min tablet
+
+$ui-breakpoint-l:		992px;	// max tablet
+$ui-breakpoint-l-min:	993px;	// min desktop
+
+$ui-max-width:			1200px;	// max container width
+
+$nav-height-mobile:			103px;
+$nav-height-tablet:			118px;
+$nav-height-desktop:		100px;
+
+
+
+
+// --------------------- Z-INDEX
+
+$ui-index-1: 1; // hover elements
+$ui-index-2: 2; // hover elements
+$ui-index-3: 3; // hover elements
+$ui-index-4: 4; // hover elements
+$ui-index-5: 5; // hover elements
+
+$ui-index-6: 6; // darkening and blur masks
+$ui-index-7: 7; // sidebars
+$ui-index-8: 8; // modals
+$ui-index-9: 9; // above-all elements
+
+
+
+
+// --------------------- TRANSITIONS
+
+$ui-transition-default: 0.25s;

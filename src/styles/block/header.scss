@@ -1,0 +1,149 @@
+// hide the checkbox always:
+.header__nav--toggle {
+	display: none;
+}
+
+
+
+
+.header {
+	height: 800px;
+	background-color: $ui-bg-light;
+	background-image: url('../images/header-bg-1380.png');
+	background-repeat: no-repeat;
+	background-position: bottom;
+	background-size: cover;
+	
+	color: white;
+}
+
+
+.header__nav {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: $ui-bg-dark;
+	padding-inline: 20px;
+
+	&--list {
+		position: absolute;
+		right: 20px;
+		left: 20px;
+		top: $nav-height-mobile;
+
+		min-width: 300px;
+		
+		background-color: $ui-bg-menu;
+		font-family: Montserrat;
+		font-weight: 400;
+		font-size: 26px;
+		line-height: 26px;
+	}
+	
+	&--item {
+		width: 100%;
+		height: 88px;
+		margin-bottom: 3px;
+		
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+	
+	&--link {
+		display: block;
+		height: 100%;
+		width: 100%;
+		padding-left: 34px;
+		padding-block: 25px;
+
+		background-color: $ui-bg-menu-item;
+		color: $ui-color-text-ondark;
+		text-transform: capitalize;
+		text-decoration: none;
+	}
+}
+
+
+
+
+.header__logo {
+	display: flex;
+	gap: 17px;
+	align-items: center;
+	
+	color: $ui-color-corporate;
+	font-family: Lato;
+	font-weight: 700;
+	font-size: 24px;
+	line-height: 16px;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+
+
+
+// burger-closed:
+.header__burger {
+	display: block;
+	width: 32px;
+	height: 32px;
+	background-image: url('../images/burger-closed.svg');
+	background-position: center;
+	background-repeat: no-repeat;
+	
+	cursor: pointer;
+}
+
+// burger-opened:
+.header__nav--toggle:checked ~ .header__burger {
+	background-image: url('../images/burger-opened.svg');
+}
+
+
+
+
+// used to show mobile menu on burger click:
+.header__nav--toggle:checked ~ .header__nav--list {
+	display: block;
+}
+
+
+
+
+
+// mobile ONLY:
+@media screen and (max-width: $ui-breakpoint-s) {
+	
+	.header__logo--text {
+		display: none;
+	}
+	
+	.header__nav {
+		height: $nav-height-mobile;
+		
+		color: $ui-bg-dark;
+	}
+
+	// .header__nav--list is invisible on mobile unless .header__nav--toggle:checked is true:
+	.header__nav--list {
+		display: none;
+	}
+}
+
+
+
+@media screen and (min-width: $ui-breakpoint-l-min) {
+	
+	// no need for the burger on desktops:
+	.header__burger {
+		display: none;
+	}
+
+	.header__nav {
+		all: unset;
+	}
+}
+
+
