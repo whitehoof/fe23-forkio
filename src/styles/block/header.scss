@@ -13,9 +13,23 @@
 	background-repeat: no-repeat;
 	background-position: bottom;
 	background-size: cover;
-	
+
 	color: white;
 }
+
+
+.header__btn--action {
+	width: 119px;
+	height: 38px;
+
+	border: none;
+	border-radius: 19px;
+	background-color: $ui-color-corporate;
+	@include fat-text;
+	color: $ui-color-text-ondark;
+	cursor: pointer;
+}
+
 
 
 .header__nav {
@@ -25,42 +39,38 @@
 	background-color: $ui-bg-dark;
 	padding-inline: 20px;
 
-	&--list {
+	&--menu {
 		position: absolute;
 		right: 20px;
 		left: 20px;
 		top: $nav-height-mobile;
 
 		min-width: 300px;
-		
+
 		background-color: $ui-bg-menu;
 		font-family: Montserrat;
 		font-weight: 400;
 		font-size: 26px;
 		line-height: 26px;
 	}
-	
-	&--item {
-		width: 100%;
-		height: 88px;
-		margin-bottom: 3px;
-		
-		&:last-child {
-			margin-bottom: 0;
-		}
-	}
-	
+
+
+
 	&--link {
-		display: block;
+		display: flex;
+		align-items: center;
 		height: 100%;
 		width: 100%;
 		padding-left: 34px;
-		padding-block: 25px;
 
 		background-color: $ui-bg-menu-item;
 		color: $ui-color-text-ondark;
 		text-transform: capitalize;
 		text-decoration: none;
+
+		&:hover {
+			color: $ui-color-text-ondark;
+		}
 	}
 }
 
@@ -71,7 +81,7 @@
 	display: flex;
 	gap: 17px;
 	align-items: center;
-	
+
 	color: $ui-color-corporate;
 	font-family: Lato;
 	font-weight: 700;
@@ -84,66 +94,431 @@
 
 
 
-// burger-closed:
-.header__burger {
-	display: block;
-	width: 32px;
-	height: 32px;
-	background-image: url('../images/burger-closed.svg');
-	background-position: center;
-	background-repeat: no-repeat;
-	
-	cursor: pointer;
-}
 
-// burger-opened:
-.header__nav--toggle:checked ~ .header__burger {
-	background-image: url('../images/burger-opened.svg');
-}
 
 
 
 
 // used to show mobile menu on burger click:
-.header__nav--toggle:checked ~ .header__nav--list {
-	display: block;
+.header__nav--toggle:checked~.header__nav--menu {
+
+	// block on mobile, flex on tablet & desktop
+	@media screen and (max-width: $ui-breakpoint-s) {
+		display: block;
+	}
+
+	@media screen and (min-width: $ui-breakpoint-s-min) {
+		display: flex;
+	}
 }
+
+
+
+
+
 
 
 
 
 
 // mobile ONLY:
+
+
+
+
 @media screen and (max-width: $ui-breakpoint-s) {
-	
+
+	//
+	//
+	// BURGER BUTTON
+	//
+	//
+
+	// burger-closed:
+	.header__burger {
+		display: none;
+		width: 32px;
+		height: 32px;
+		background-image: url('../images/burger-closed.svg');
+		background-position: center;
+		background-repeat: no-repeat;
+
+		cursor: pointer;
+	}
+
+	// burger-opened:
+	.header__nav--toggle:checked~.header__burger {
+		background-image: url('../images/burger-opened.svg');
+	}
+
+
 	.header__logo--text {
 		display: none;
 	}
-	
-	.header__nav {
-		height: $nav-height-mobile;
-		
-		color: $ui-bg-dark;
+
+	.header__burger {
+		display: block;
 	}
 
-	// .header__nav--list is invisible on mobile unless .header__nav--toggle:checked is true:
-	.header__nav--list {
-		display: none;
+
+
+
+
+
+	//
+	//
+	// NAVIGATION MOBILE
+	//
+	//
+
+
+	.header__nav {
+		height: $nav-height-mobile;
+		color: $ui-bg-dark;
+
+		// .header__nav--menu is invisible on mobile unless .header__nav--toggle:checked is true:
+		&--menu {
+			display: none;
+		}
+
+		&--item {
+			width: 100%;
+			height: 88px;
+			margin-bottom: 3px;
+	
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+
+		&--link {
+			&_active {
+				position: relative;
+				color: $ui-color-corporate;
+
+				&:before {
+					content: '';
+					position: absolute;
+					left: 0px;
+					top: 50%;
+					transform: translateY(-50%);
+
+					display: block;
+					width: 8px;
+					height: 53px;
+
+					background-color: $ui-color-corporate;
+				}
+			}
+		}
+	}
+
+
+	//
+	//
+	// BELOW NAVIGATION MOBILE
+	//
+	//
+
+	.header {
+		position: relative;
+		margin-bottom: 130px;
+
+		&__nav {
+			margin-bottom: 48px;
+		}
+
+		&__heading1 {
+			margin-bottom: 19px;
+			padding-inline: 20px;
+			text-align: center;
+			
+			@include fat-text;
+			color: $ui-color-text-ondark;
+			font-size: 48px;
+		}
+		
+		&__slogan {
+			margin-bottom: 14px;
+			padding-inline: 20px;
+			text-align: center;
+			
+			color: $ui-color-corporate;
+			font-family: Montserrat;
+			font-weight: 400;
+			font-size: 18px;
+			line-height: 24px;
+			text-transform: capitalize;
+		}
+		
+		&__text {
+			padding-inline: 20px;
+			text-align: center;
+
+			text-transform: uppercase;
+			color: $ui-color-text-grey;
+		}
+
+		&__btn--download {
+			position: absolute;
+			bottom: 0;
+			left: 50%;
+			transform: translate(-50%, 50%);
+
+			width: 290px;
+			height: 45px;
+
+			border: none;
+			border-radius: 23px;
+			background-color: $ui-color-corporate;
+			@include fat-text;
+			font-size: 18px;
+			color: $ui-color-text-ondark;
+			cursor: pointer;
+			
+			&_subtitle {
+				position: absolute;
+				bottom: -42px;
+				left: 50%;
+				transform: translate(-50%, 50%);
+				width: 100%;
+				text-align: center;
+
+				color: $ui-color-text-grey;
+				font-size: 14px;
+				font-weight: 400;
+				text-transform: capitalize;
+			}
+		}
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+// tablet ONLY:
+
+
+
+
+
+
+@media screen and (min-width: $ui-breakpoint-s-min)and (max-width: $ui-breakpoint-l) {
+
+	.header__burger {
+		// remove burger from the flex of the header__nav
+		position: absolute;
+	}
+
+	//
+	//
+	// NAVIGATION TABLET
+	//
+	//
+
+	.header__nav {
+		height: $nav-height-tablet;
+		
+
+		&--menu {
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: $nav-height-tablet;
+
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			align-items: center;
+			gap: 25px;
+
+			background-color: $ui-bg-dark;
+		}
+
+		&--item {
+			width: max-content;
+			
+			// flex:auto;
+			height: unset;
+			margin: 0;
+			background-color: transparent;
+		}
+
+		&--link {
+			flex-direction: row;
+			justify-content: center;
+			padding-left: 0;
+			padding-bottom: 18px;
+
+			@include fat-text;
+			font-size: 16px;
+			background-color: transparent;
+			text-align: center;
+
+		}
+	}
+
+	//
+	//
+	// BELOW NAVIGATION TABLET
+	//
+	//
+
+	.header {
+		position: relative;
+		margin-bottom: 130px;
+
+		&__nav {
+			margin-bottom: 88px;
+		}
+
+		&__heading1 {
+			margin-bottom: 19px;
+			padding-inline: 20px;
+			text-align: center;
+			
+			@include fat-text;
+			color: $ui-color-text-ondark;
+			font-size: 72px;
+		}
+		
+		&__slogan {
+			margin-bottom: 19px;
+			padding-inline: 20px;
+			text-align: center;
+			
+			color: $ui-color-corporate;
+			font-family: Montserrat;
+			font-weight: 400;
+			font-size: 24px;
+			line-height: 1.2;
+		
+		}
+		
+		&__text {
+			padding-inline: 20px;
+			text-align: center;
+
+			text-transform: uppercase;
+			color: $ui-color-text-grey;
+		}
+
+		&__btn--download {
+			position: absolute;
+			bottom: 0;
+			left: 50%;
+			transform: translate(-50%, 50%);
+
+			width: 390px;
+			height: 62px;
+
+			border: none;
+			border-radius: 31px;
+			background-color: $ui-color-corporate;
+			@include fat-text;
+			font-size: 21px;
+			color: $ui-color-text-ondark;
+			cursor: pointer;
+			
+			&_subtitle {
+				position: absolute;
+				bottom: -58px;
+				left: 50%;
+				transform: translate(-50%, 50%);
+				width: 100%;
+				text-align: center;
+
+				color: $ui-color-text-grey;
+				font-size: 14px;
+				font-weight: 400;
+				text-transform: capitalize;
+			}
+		}
+	}
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+// desktop ONLY:
+
 
 
 
 @media screen and (min-width: $ui-breakpoint-l-min) {
-	
-	// no need for the burger on desktops:
+
+	// remove burger from the flex of the header__nav
 	.header__burger {
+		position: absolute;
 		display: none;
 	}
 
+	.header__btn--action {
+		order: 3;
+	}
+
+	.header__nav > * {
+		flex-grow: 0;
+	}
+
 	.header__nav {
-		all: unset;
+		margin-bottom: 83px;
+		padding-inline: 100px;
+		height: $nav-height-desktop;
+		gap: 25px;
+		justify-content: space-between;
+
+		&--menu {
+			position: relative;
+			width: max-content;
+			margin-left: auto;
+			display: flex;
+			flex-direction: row;
+			gap: 25px;
+			justify-content: flex-end;
+			align-items: center;
+			flex-wrap: nowrap;
+			top: unset;
+			left: unset;
+			right: unset;
+			background-color: transparent;
+		}
+
+		&--item {
+			height: unset;
+			width: unset;
+			background-color: transparent;
+		}
+		&--link {
+			width: max-content;
+			justify-content: center;
+			padding-left: 0;
+			margin-bottom: 0px;
+			
+			@include fat-text;
+			font-size: 16px;
+			background-color: transparent;
+		}
 	}
 }
-
-

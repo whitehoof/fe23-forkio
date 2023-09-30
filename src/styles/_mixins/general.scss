@@ -1,0 +1,8 @@
+@mixin fat-text {
+	font-family: Montserrat;
+	font-weight: 700;
+	font-style: normal;
+	color: $ui-color-corporate;
+	text-decoration: none;
+	text-transform: capitalize;
+}
