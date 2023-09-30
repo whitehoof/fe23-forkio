@@ -256,6 +256,7 @@
 			text-align: center;
 
 			text-transform: uppercase;
+			font-size: 14px;
 			color: $ui-color-text-grey;
 		}
 
@@ -408,6 +409,7 @@
 			text-align: center;
 
 			text-transform: uppercase;
+			font-size: 14px;
 			color: $ui-color-text-grey;
 		}
 
@@ -443,10 +445,6 @@
 			}
 		}
 	}
-
-
-
-
 }
 
 
@@ -477,6 +475,15 @@
 	.header__btn--action {
 		order: 3;
 	}
+
+
+
+
+	//
+	//
+	// NAVIGATION DESKTOP
+	//
+	//
 
 	.header__nav > * {
 		flex-grow: 0;
@@ -519,6 +526,92 @@
 			@include fat-text;
 			font-size: 16px;
 			background-color: transparent;
+		}
+	}
+
+
+
+
+
+
+
+
+	//
+	//
+	// BELOW NAVIGATION DESKTOP
+	//
+	//
+
+	.header {
+		position: relative;
+		margin-bottom: 130px;
+
+		&__nav {
+			margin-bottom: 80px;
+		}
+
+		&__heading1 {
+			margin-bottom: 19px;
+			padding-inline: 20px;
+			text-align: center;
+			
+			@include fat-text;
+			color: $ui-color-text-ondark;
+			font-size: 82px;
+		}
+		
+		&__slogan {
+			margin-bottom: 19px;
+			padding-inline: 20px;
+			text-align: center;
+			
+			color: $ui-color-corporate;
+			font-family: Montserrat;
+			font-weight: 400;
+			font-size: 30px;
+			line-height: 1.2;
+		
+		}
+		
+		&__text {
+			padding-inline: 20px;
+			text-align: center;
+
+			text-transform: uppercase;
+			font-size: 16px;
+			color: $ui-color-text-grey;
+		}
+
+		&__btn--download {
+			position: absolute;
+			bottom: 0;
+			left: 50%;
+			transform: translate(-50%, 50%);
+
+			width: 390px;
+			height: 62px;
+
+			border: none;
+			border-radius: 31px;
+			background-color: $ui-color-corporate;
+			@include fat-text;
+			font-size: 21px;
+			color: $ui-color-text-ondark;
+			cursor: pointer;
+			
+			&_subtitle {
+				position: absolute;
+				bottom: -58px;
+				left: 50%;
+				transform: translate(-50%, 50%);
+				width: 100%;
+				text-align: center;
+
+				color: $ui-color-text-grey;
+				font-size: 14px;
+				font-weight: 400;
+				text-transform: capitalize;
+			}
 		}
 	}
 }
