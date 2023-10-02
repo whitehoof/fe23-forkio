@@ -6,3 +6,8 @@
 	text-decoration: none;
 	text-transform: capitalize;
 }
+
+@mixin btn-hover {
+	color: $ui-color-corporate;
+	background-color: $ui-bg-light;
+}

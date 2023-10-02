@@ -11,7 +11,7 @@
 	background-color: $ui-bg-light;
 	background-image: url('../images/header-bg-1380.png');
 	background-repeat: no-repeat;
-	background-position: bottom;
+	background-position:center;
 	background-size: cover;
 
 	color: white;
@@ -28,6 +28,11 @@
 	@include fat-text;
 	color: $ui-color-text-ondark;
 	cursor: pointer;
+
+	&:hover {
+		@include btn-hover;
+		border: 1px solid $ui-color-corporate;
+	}
 }
 
 
@@ -89,12 +94,34 @@
 	line-height: 16px;
 	text-decoration: none;
 	text-transform: uppercase;
+
+	&:hover 							{ color: $ui-color-text-ondark}
+	&:hover	.header__logo--img			{display: none;}
+	&:hover	.header__logo--img_hover	{display: block;}
 }
 
+.header__logo--img_hover	{display: none;}
 
 
 
 
+
+
+/*
+
+a img:last-child {
+	display: none;  
+}
+
+a:hover img:last-child {
+	display: block;  
+}
+
+a:hover img:first-child {
+	display: none;  
+}
+
+*/
 
 
 
@@ -276,6 +303,11 @@
 			font-size: 18px;
 			color: $ui-color-text-ondark;
 			cursor: pointer;
+
+			&:hover {
+				@include btn-hover;
+				border: 2px solid $ui-color-corporate;
+			}
 			
 			&_subtitle {
 				position: absolute;
@@ -430,6 +462,11 @@
 			color: $ui-color-text-ondark;
 			cursor: pointer;
 			
+			&:hover {
+				@include btn-hover;
+				border: 2px solid $ui-color-corporate;
+			}
+
 			&_subtitle {
 				position: absolute;
 				bottom: -58px;
@@ -599,6 +636,11 @@
 			color: $ui-color-text-ondark;
 			cursor: pointer;
 			
+			&:hover {
+				@include btn-hover;
+				border: 2px solid $ui-color-corporate;
+			}
+
 			&_subtitle {
 				position: absolute;
 				bottom: -58px;

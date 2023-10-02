@@ -28,7 +28,7 @@ const js = () => {
 				// src:'.js',								// full-size file naming
 				min:'.min.js'							// minified file naming
 		},
-		noSource: true									// don't output source files in the destination folder
+		noSource: true									// "true" means "don't output source files in the destination folder"
 		}))
 		.pipe(gulp.dest('./dist/scripts'))              // put .js and .min.js into the destination folder
 	;
