@@ -1,7 +1,7 @@
 {
   "name": "fe23-forkio",
   "version": "1.0.0",
-  "description": "FE23 Step Project Forkio",
+  "description": "FE23 Step Project Forkio. Student 1 is Ed Bilokopytov, student 2 did not participate. Project result on the web: https://whitehoof.github.io/fe23-forkio/",
   "main": "scripts/script.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -13,7 +13,7 @@
     "type": "git",
     "url": "git+https://github.com/whitehoof/fe23-forkio.git"
   },
-  "author": "Ед Білокопитов, Геннадій Ковтун",
+  "author": "Ед Білокопитов",
   "license": "ISC",
   "devDependencies": {
     "browser-sync": "^2.29.3",
