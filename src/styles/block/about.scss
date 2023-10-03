@@ -1,0 +1,126 @@
+.about {
+	padding-top: 57px;
+
+	background-color: $ui-bg-corporate;
+	background-image: url('../images/testmonials-bg-1380.png');
+	background-repeat: no-repeat;
+	background-position:center;
+	background-size: cover;
+
+	&__heading2 {
+		margin-bottom: 53px;
+		text-align: center;
+		@include fat-text;
+		color: $ui-color-text-ondark;
+		font-size: 36px;
+		line-height: 48px;
+		
+	}
+
+	&__cards {
+		display: grid;
+		justify-items: stretch;
+		align-items: center;
+		margin-bottom: 37px;
+	}
+
+	&__card {
+		flex-grow: 1;
+		flex-shrink: 0;
+		display: flex;
+		flex-direction: column;
+		justify-items: center;
+		align-items: center;
+		text-align: center;
+		gap: 25px;
+
+		&--text {
+			color: $ui-color-text-ondark;
+			font-size: 16px;
+			line-height: 24px;
+			font-weight: 700;
+			font-style: italic;
+		}
+	}
+
+	&__bottom {
+		position: relative;
+		padding-bottom: 20px;
+		text-align: center;
+
+		color: $ui-color-corporate-pale;
+		font-family: Lato;
+		font-weight: 400;
+		font-size: 14px;
+		line-height: 21px;
+
+		&:after {
+			content: '';
+			position: absolute;
+			bottom: 0px;
+			left: 50%;
+			transform: translateX(-50%);
+			
+			display: block;
+			width: 68%;
+			height: 2px;
+
+			background-color: $ui-bg-separator-about;
+			
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+// mobile ONLY:
+
+
+
+@media screen and (max-width: $ui-breakpoint-s) {
+	.about {
+
+		&__cards {
+			gap: 45px;
+		}
+	}
+}
+
+
+// tablet ONLY:
+
+
+
+@media screen and (min-width: $ui-breakpoint-s-min) and (max-width: $ui-breakpoint-l)  {
+	.about {
+		padding-top: 87px;
+
+		&__cards {
+			gap: 50px 70px;
+			grid-template-columns: 1fr 1fr;
+		}
+	}
+}
+
+
+
+// desktop ONLY:
+
+
+
+@media screen and (min-width: $ui-breakpoint-l-min)   {
+	.about {
+		padding-top: 110px;
+
+		&__cards {
+			gap: 110px 100px;
+			grid-template-columns: 1fr 1fr 1fr;
+		}
+	}
+}

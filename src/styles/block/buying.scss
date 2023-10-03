@@ -1,0 +1,197 @@
+.buying {
+	padding-top: 14px;
+	padding-bottom: 12px;
+	background-color: $ui-bg-corporate;
+	background-image: url('../images/buying-bg-1380.png');
+	background-repeat: no-repeat;
+	background-position:center;
+	background-size: cover;
+	
+	&__heading2 {
+		margin-bottom: 53px;
+		text-align: center;
+		@include fat-text;
+		color: $ui-color-text-ondark;
+		font-size: 36px;
+		line-height: 48px;
+		
+	}
+
+	&__cards {
+		display: grid;
+		justify-items: center;
+		align-items: center;
+	}
+
+	&__card {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+		width: 230px;
+		height: 457px;
+
+		color: $ui-color-text-ondark;
+		background-color: $ui-bg-buy-card;
+		
+		&--heading3 {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 100%;
+			height: 97px;
+			margin-bottom: 31px;
+
+			font-weight: 400;
+			font-size: 24px;
+			text-transform: uppercase;
+			background-color: $ui-bg-buy-head;
+		}
+
+		&--price {
+			margin-bottom: 20px;
+
+			font-size: 60px;
+			font-weight: 400;
+			& b {
+				font-weight: 700;
+			}
+		}
+
+		&--period {
+			position: relative;
+			padding-bottom: 37px;
+			margin-bottom: 30px;
+
+			text-transform: uppercase;
+			font-size: 14px;
+
+			&:after {
+				content: '';
+				position: absolute;
+				bottom: 0px;
+				left: 50%;
+				transform: translateX(-50%);
+				
+				display: block;
+				width: 60px;
+				height: 5px;
+
+				background-color: $ui-bg-separator-buying;
+			}
+		}
+
+		&--features {
+			margin-bottom: 36px;
+			margin-inline: 5px;
+
+			font-size: 15px;
+			line-height: 18px;
+			text-transform: capitalize;
+		}
+
+		&--btn {
+			position: absolute;
+			bottom: 39px;
+
+			width: 163px;
+			height: 45px;
+			border: none;
+			border-radius: 23px;
+			
+			background-color: $ui-bg-buy-btn;
+			color: $ui-color-text-ondark;
+			font-size: 15px;
+			font-weight: 400;
+			text-transform: uppercase;
+			cursor: pointer;
+			
+			&:hover {
+				@include btn-hover;
+				border: 2px solid $ui-color-corporate;
+			}
+		}
+		
+		&--featured {
+			width: 300px;
+			height: 540px;
+
+			background-color: $ui-bg-buy-card-featured;
+
+			& .buying__card--price {
+				font-size: 82px;
+			}
+
+			& .buying__card--heading3 {
+				background-color: $ui-bg-buy-head-featured;
+			}
+		}
+	}
+
+}
+
+
+
+// mobile ONLY:
+
+
+
+@media screen and (max-width: calc($ui-breakpoint-s + 100px)) {
+	.buying {
+		&__cards {
+			gap: 18px;
+		}
+	}
+}
+
+
+
+// tablet ONLY:
+
+
+
+@media screen and (min-width: calc($ui-breakpoint-s-min + 100px)) and (max-width: $ui-breakpoint-l)  {
+	.buying {
+		padding-top: 88px;
+		padding-bottom: 150px;
+
+		&__cards {
+			gap: 70px 10px;
+			grid-template-columns: 1fr 1fr;
+		}
+
+		&__card {
+			
+			&--featured {
+				width: 300px;
+			}
+		}
+	}
+}
+
+
+
+// desktop ONLY:
+
+
+
+@media screen and (min-width: $ui-breakpoint-l-min)   {
+	.buying {
+		padding-top: 110px;
+		padding-bottom: 150px;
+
+		&__cards {
+			gap: 10px;
+			grid-template-columns: 1fr 1fr 1fr 1fr;
+		}
+
+		&__card {
+			width: 222px;
+			
+			&--featured {
+				width: 260px;
+			}
+		}
+	}
+}

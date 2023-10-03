@@ -1,8 +1,6 @@
 "use strict"
 
 function hideMobileMenu(event) {
-	console.log(event.target);
-	console.log("checked: " + document.querySelector('#header__nav--toggle').checked);
 	if ( 
 		// only hide the menu if the event is outside the menu:
 		!document.querySelector('.header__nav--menu').contains(event.target) 
@@ -11,7 +9,6 @@ function hideMobileMenu(event) {
 		document.querySelector('.header__burger') !== event.target 
 	) {
 		document.querySelector('#header__nav--toggle').checked = false;
-		console.log("checked AFTER: " + document.querySelector('#header__nav--toggle').checked);
 	}
 }
 
